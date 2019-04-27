@@ -1,0 +1,24 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 1.6rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #111;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.8)),
+            #111 url(https://source.unsplash.com/RF4p4rTM-2s/1280x720) no-repeat center fixed;
+  background-size: cover;
+}
+.wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+:focus {
+    outline: 3px solid #02b1c8;
+}
