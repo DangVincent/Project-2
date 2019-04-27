@@ -48,12 +48,15 @@ class LocationGenerator extends Component{
     }
 
 	render() {
+
+		const {searching, searched, locations, totalPages, page} = this.state;
+
 		return (
 			<section className='wrapper'>
 				<SearchInput handleSearchInput={ e => this.handleSearchInput(e.target.value.replace(" ", "+")) } />
-                { this.state.searching ? <div className="search-loader" /> : null }
-                { this.state.searched && !this.state.searching ? <SearchOutput locations={ this.state.locations } firstLocationRef={ this.firstLocationRef } /> : null }
-                { this.state.totalPages > 1 && !this.state.searching ? <PageNavigation page={ this.state.page } totalPages={ this.state.totalPages } changePage={ this.changePage } /> : null }
+                { searching ? <div className="search-loader" /> : null }
+                { searched && !searching ? <SearchOutput locations={ locations } firstLocationRef={ this.firstLocationRef } /> : null }
+                { totalPages > 1 && !searching ? <PageNavigation page={ page } totalPages={ totalPages } changePage={ this.changePage } /> : null }
 			</section>
 		);
 	}

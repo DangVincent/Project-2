@@ -48,12 +48,15 @@ class CharacterGenerator extends Component{
     }
 
 	render() {
+
+		const {searching, searched, characters, totalPages, page} = this.state;
+
 		return (
 			<section className='wrapper'>
 				<SearchInput handleSearchInput={ e => this.handleSearchInput(e.target.value.replace(" ", "+")) } />
-                { this.state.searching ? <div className="search-loader" /> : null }
-                { this.state.searched && !this.state.searching ? <SearchOutput characters={ this.state.characters } firstCharacterRef={ this.firstCharacterRef } /> : null }
-                { this.state.totalPages > 1 && !this.state.searching ? <PageNavigation page={ this.state.page } totalPages={ this.state.totalPages } changePage={ this.changePage } /> : null }
+                { searching ? <div className="search-loader" /> : null }
+                { searched && !searching ? <SearchOutput characters={ characters } firstCharacterRef={ this.firstCharacterRef } /> : null }
+                { totalPages > 1 && !searching ? <PageNavigation page={ page } totalPages={ totalPages } changePage={ this.changePage } /> : null }
 			</section>
 		);
 	}
